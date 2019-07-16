@@ -15,11 +15,13 @@ import android.support.v7.widget.Toolbar
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+import com.mario_antolovic.weatherappupgraded.Common.Common;
 
 import java.util.List;
 
@@ -78,9 +80,37 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void buildLocationCallback() {
+        locationCallback= new LocationCallback() {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                super.onLocationResult(locationResult);
+
+                Common.current_location = locationResult.getLastLocation();
+
+                viewPager = (ViewPager)findViewById(R.id.view_pager);
+                setupViewPage(viewPager);
+                tabLayout= (TabLayout)findViewById(R.id.tabs);
+                tabLayout.setupWithViewPager(viewPager);
+
+            }
+        };
+
+
+    }
+
+    private void setupViewPage(ViewPager viewPager) {
+
+
+    }
+
     private void buildLocationRequest() {
 
         locationRequest = new LocationRequest();
-        locationRequest.setPriority()
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(5000);
+        locationRequest.setFastestInterval(3000);
+        locationRequest.setSmallestDisplacement(10.0f);
+
     }
 }
