@@ -17,6 +17,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                          
                             return;
                         }
+                        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
                         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
 
                     }
