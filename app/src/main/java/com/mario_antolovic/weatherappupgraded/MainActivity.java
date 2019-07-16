@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -93,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
                 setupViewPage(viewPager);
                 tabLayout= (TabLayout)findViewById(R.id.tabs);
                 tabLayout.setupWithViewPager(viewPager);
+
+                // Log
+                Log.d("Location",locationResult.getLastLocation().getLatitude()+"/"+locationResult.getLastLocation().getLongitude());
 
             }
         };
