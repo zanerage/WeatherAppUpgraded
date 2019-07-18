@@ -1,8 +1,13 @@
 package com.mario_antolovic.weatherappupgraded.Model;
 
 public class Wind {
+
+
     private double speed ;
     private double deg ;
+
+    public Wind() {
+    }
 
     public double getSpeed() {
         return speed;
@@ -18,9 +23,5 @@ public class Wind {
 
     public void setDeg(double deg) {
         this.deg = deg;
-    }
-
-    public Wind() {
-
     }
 }

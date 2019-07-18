@@ -1,13 +1,32 @@
 package com.mario_antolovic.weatherappupgraded.Model;
 
 public class Sys {
-    //public int type;
-    //public int id;
+    private int type ;
+    private int id ;
     private double message ;
     private String country ;
     private int sunrise ;
     private int sunset ;
 
+
+    public Sys() {
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public double getMessage() {
         return message;
@@ -39,9 +58,5 @@ public class Sys {
 
     public void setSunset(int sunset) {
         this.sunset = sunset;
-    }
-
-    public Sys(){
-
     }
 }

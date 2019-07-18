@@ -59,15 +59,18 @@ public class MainActivity extends AppCompatActivity {
                 .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
-                        buildLocationRequest();
-                        buildLocationCallback();
+                        if (report.areAllPermissionsGranted()) {
+                            buildLocationRequest();
+                            buildLocationCallback();
+                            if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-                        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                         
-                            return;
+                                return;
+                            }
+                            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
+                            fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
                         }
-                        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
-                        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
+
+
 
                     }
 

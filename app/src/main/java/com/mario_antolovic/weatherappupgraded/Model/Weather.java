@@ -1,10 +1,16 @@
 package com.mario_antolovic.weatherappupgraded.Model;
 
 public class Weather {
+
+
+
     private int id ;
-    private String main ;
+    private String main;
     private String description ;
     private String icon ;
+
+    public Weather() {
+    }
 
     public int getId() {
         return id;
@@ -36,9 +42,5 @@ public class Weather {
 
     public void setIcon(String icon) {
         this.icon = icon;
-    }
-
-    public Weather() {
-
     }
 }

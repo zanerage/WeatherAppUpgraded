@@ -3,21 +3,21 @@ package com.mario_antolovic.weatherappupgraded.Model;
 import java.util.List;
 
 public class WeatherResult {
-    private Coord coord ;
+    private Coord coord;
     private List<Weather> weather;
-    private String base ;
-    private Main main ;
+    private String base;
+    private Main main;
     private int visibility;
-    private Wind wind ;
-    private Clouds clouds ;
-    private int dt ;
-    private Sys sys ;
-    private int id ;
-    private String name ;
-    private int cod ;
+    private Wind wind;
+    private Clouds clouds;
+    private int dt;
+    private Sys sys;
+    private int timezone;
+    private int id;
+    private String name;
+    private int cod;
 
     public WeatherResult() {
-
     }
 
     public Coord getCoord() {
@@ -90,6 +90,14 @@ public class WeatherResult {
 
     public void setSys(Sys sys) {
         this.sys = sys;
+    }
+
+    public int getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(int timezone) {
+        this.timezone = timezone;
     }
 
     public int getId() {
