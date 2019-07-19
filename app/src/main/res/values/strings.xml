@@ -9,4 +9,12 @@
     <string name="speed">Speed</string>
     <string name="speed_1_deg_1">Speed : 1 Deg : 1</string>
     <string name="pressure">Pressure</string>
+    <string name="humidity">Humidity</string>
+    <string name="_100">100%</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="_11_00">11:00</string>
+    <string name="sunset">Sunset</string>
+    <string name="_18_00">18:00</string>
+    <string name="geo_coords">Geo Coords</string>
+    <string name="_32_0_81_0">[32.0,-81.0]</string>
 </resources>
