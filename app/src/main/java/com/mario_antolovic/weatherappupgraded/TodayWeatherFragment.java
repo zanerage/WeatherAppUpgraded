@@ -118,7 +118,12 @@ public class TodayWeatherFragment extends Fragment {
                         txt_city_name.setText(weatherResult.getName());
                         txt_description.setText(new StringBuilder("The current Weather in ")
                         .append(weatherResult.getName()).toString());
-                        txt_tempature.setText(new StringBuilder(Sna));
+                        txt_tempature.setText(new StringBuilder(String.valueOf(weatherResult.getMain().getTemp()))
+                        .append("°C").toString());
+                        txt_date_time.setText(Common.convertUnixToDate(weatherResult.getDt()));
+                        txt_pressure.setText(new StringBuilder(String.valueOf(weatherResult.getMain().getPressure()))
+                        .append(" hpa ").toString());
+                        txt
 
                     }
 
