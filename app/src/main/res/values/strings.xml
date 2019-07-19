@@ -3,4 +3,10 @@
 
 
     <string name="todayweather">Today Weather</string>
+    <string name="weather_in_london_gb">Weather in London,GB</string>
+    <string name="_14_c">14 C</string>
+    <string name="wind">Wind</string>
+    <string name="speed">Speed</string>
+    <string name="speed_1_deg_1">Speed : 1 Deg : 1</string>
+    <string name="pressure">Pressure</string>
 </resources>
