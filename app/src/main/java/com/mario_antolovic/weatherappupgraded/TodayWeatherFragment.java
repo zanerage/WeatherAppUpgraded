@@ -111,7 +111,7 @@ public class TodayWeatherFragment extends Fragment {
                     public void accept(WeatherResult weatherResult) throws Exception {
 
                         //load image
-                        Picasso.get().load(new StringBuilder("https://openweathermap.org/img/wn/01n@2x.png")
+                        Picasso.get().load(new StringBuilder("https://openweathermap.org/img/w/")
                         .append(weatherResult.getWeather().get(0).getIcon())
                         .append(".png").toString()).into(img_weather);
                      //load all information about weather
@@ -126,7 +126,7 @@ public class TodayWeatherFragment extends Fragment {
                         txt_humidity.setText(new StringBuilder(String.valueOf(weatherResult.getMain().getHumidity())).append(" % ").toString());
                         txt_sunrise.setText(Common.convertUnixToHour(weatherResult.getSys().getSunrise()));
                         txt_sunset.setText(Common.convertUnixToHour(weatherResult.getSys().getSunset()));
-                        txt_geo_coords.setText(new StringBuilder("[").append(weatherResult.getCoord().toString()).append("]").toString());
+                        txt_geo_coords.setText(new StringBuilder(weatherResult.getCoord().toString()).toString());
 
                         //display panel
 
