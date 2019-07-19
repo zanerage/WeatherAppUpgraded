@@ -100,7 +100,7 @@ public class TodayWeatherFragment extends Fragment {
 
     private void getWeatherInformation() {
 
-        compositeDisposable.add(mService.getWeatherByLatLng(String.valueOf(Common.current_location),
+        compositeDisposable.add(mService.getWeatherByLatLng(String.valueOf(Common.current_location.getLatitude()),
                 String.valueOf(Common.current_location.getLongitude()),
                 Common.APP_ID,
                 "metric")
@@ -114,7 +114,7 @@ public class TodayWeatherFragment extends Fragment {
                         Picasso.get().load(new StringBuilder("https://openweathermap.org/img/wn/01n@2x.png")
                         .append(weatherResult.getWeather().get(0).getIcon())
                         .append(".png").toString()).into(img_weather);
-
+                     //load all information about weather
                         txt_city_name.setText(weatherResult.getName());
                         txt_description.setText(new StringBuilder("The current Weather in ")
                         .append(weatherResult.getName()).toString());
@@ -123,7 +123,18 @@ public class TodayWeatherFragment extends Fragment {
                         txt_date_time.setText(Common.convertUnixToDate(weatherResult.getDt()));
                         txt_pressure.setText(new StringBuilder(String.valueOf(weatherResult.getMain().getPressure()))
                         .append(" hpa ").toString());
-                        txt
+                        txt_humidity.setText(new StringBuilder(String.valueOf(weatherResult.getMain().getHumidity())).append(" % ").toString());
+                        txt_sunrise.setText(Common.convertUnixToHour(weatherResult.getSys().getSunrise()));
+                        txt_sunset.setText(Common.convertUnixToHour(weatherResult.getSys().getSunset()));
+                        txt_geo_coords.setText(new StringBuilder("[").append(weatherResult.getCoord().toString()).append("]").toString());
+
+                        //display panel
+
+                        weather_panel.setVisibility(View.VISIBLE);
+                        loading.setVisibility(View.GONE);
+
+
+
 
                     }
 
