@@ -29,12 +29,13 @@
             
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            
+
             <ImageView
                 android:id="@+id/img_weather"
-                android:src="@mipmap/ic_launcher"
                 android:layout_width="80dp"
-                android:layout_height="80dp" />
+                android:layout_height="80dp"
+                android:contentDescription="@string/vrijeme"
+                android:src="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/txt_tempature"
