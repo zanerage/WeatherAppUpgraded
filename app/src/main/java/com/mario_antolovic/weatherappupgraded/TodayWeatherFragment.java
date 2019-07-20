@@ -114,6 +114,8 @@ public class TodayWeatherFragment extends Fragment {
                         Picasso.get().load(new StringBuilder("https://openweathermap.org/img/w/")
                         .append(weatherResult.getWeather().get(0).getIcon())
                         .append(".png").toString()).into(img_weather);
+
+
                      //load all information about weather
                         txt_city_name.setText(weatherResult.getName());
                         txt_description.setText(new StringBuilder("The current Weather in ")
@@ -146,6 +148,14 @@ public class TodayWeatherFragment extends Fragment {
     })
 
         );
-    }
 
+    }
+//When we use RxJava and Retrofit to fetch API , we put all fetch action to compositeDis... so after our app not work in foreground , we will clear it to save memory
+    @Override
+    public void onStop() {
+        compositeDisposable.clear();
+        super.onStop();
+
+
+    }
 }
