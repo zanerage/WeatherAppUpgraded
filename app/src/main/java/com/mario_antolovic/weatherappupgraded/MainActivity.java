@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(TodayWeatherFragment.getInstance(),"Today");
         adapter.addFragment(ForecastFragment.getInstance(),"Next 5 Days");
+        adapter.addFragment(CityFragment.getInstance(),"Cities");
         viewPager.setAdapter(adapter);
     }
 

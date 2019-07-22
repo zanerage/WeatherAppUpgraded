@@ -151,11 +151,15 @@ public class TodayWeatherFragment extends Fragment {
 
     }
 //When we use RxJava and Retrofit to fetch API , we put all fetch action to compositeDis... so after our app not work in foreground , we will clear it to save memory
+@Override
+public void onDestroy() {
+    compositeDisposable.clear();
+    super.onDestroy();
+}
+
     @Override
     public void onStop() {
         compositeDisposable.clear();
         super.onStop();
-
-
     }
 }
