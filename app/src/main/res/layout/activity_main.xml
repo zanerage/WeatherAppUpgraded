@@ -39,10 +39,11 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="133dp"
             android:fontFamily="@font/muli_semibold"
             android:text="@string/please_turn_on_location_manually_on_your_device"
             android:textSize="30sp" />
+
 
     </android.support.design.widget.AppBarLayout>
 
