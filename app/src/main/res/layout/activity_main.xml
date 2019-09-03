@@ -42,6 +42,9 @@
             android:layout_height="133dp"
             android:fontFamily="@font/muli_semibold"
             android:text="@string/please_turn_on_location_manually_on_your_device"
+
+
+
             android:textSize="30sp" />
 
 
